@@ -1,7 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-// Function to generate the README content
 function generateREADME(answers) {
   return `
 # ${answers.title}
@@ -12,7 +11,6 @@ ${answers.description}
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
@@ -39,7 +37,6 @@ For additional questions, you can reach me through:
   `;
 }
 
-// Prompting the user for information
 inquirer
   .prompt([
     {
@@ -61,12 +58,6 @@ inquirer
       type: 'input',
       name: 'usage',
       message: 'Enter usage information:',
-    },
-    {
-      type: 'list',
-      name: 'license',
-      message: 'Choose a license:',
-      choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'BSD 3-Clause', 'None'],
     },
     {
       type: 'input',
